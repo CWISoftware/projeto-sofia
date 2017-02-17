@@ -9,6 +9,8 @@ before_build:
   - nuget restore
   - cd src/Sofia.WebApp/
   - npm install
+  - cd ..
+  - cd ..
 
 build_script:
   - choco install "msbuild-sonarqube-runner" -y
