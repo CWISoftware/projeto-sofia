@@ -63,6 +63,7 @@
     <Folder Include="Security\" />
     <Folder Include="sofia\" />
     <Folder Include="sofia\Tables\" />
+    <Folder Include="sofia\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\sofia.sql" />
@@ -70,6 +71,7 @@
     <Build Include="sofia\Tables\Tecnologia.sql" />
     <Build Include="sofia\Tables\Colaborador.sql" />
     <Build Include="sofia\Tables\Avaliacao.sql" />
+    <Build Include="sofia\Views\vwBuscarNivelColaboradorPorTecnologia.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sofia.Database.publish.xml" />

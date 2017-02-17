@@ -11,7 +11,7 @@ namespace Sofia.Domain.Categorias.Commands
         ICommandHandler<AtualizarCategoriaCommand>,
         ICommandHandler<CriarCategoriaCommand>,
         ICommandHandler<ExcluirCategoriaCommand>,
-        IQueryHandler<EmptyParameter, IEnumerable<CategoriaResult>>
+        IQueryHandler<EmptyParameter, IEnumerable<CategoriaViewModel>>
     {
 
         readonly ICategoriaRepository _categoriaRepository;
@@ -49,7 +49,7 @@ namespace Sofia.Domain.Categorias.Commands
             AddNotifications(categoria.Notifications);
         }
 
-        public IEnumerable<CategoriaResult> Retrieve(EmptyParameter query)
+        public IEnumerable<CategoriaViewModel> Retrieve(EmptyParameter query)
         {
             return _categoriaRepository.ListarCategorias();
         }

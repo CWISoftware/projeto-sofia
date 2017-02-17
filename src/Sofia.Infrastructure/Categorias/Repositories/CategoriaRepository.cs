@@ -29,12 +29,12 @@ namespace Sofia.Infrastructure.Categorias.Repositories
                 .FirstOrDefault();
         }
 
-        public IEnumerable<CategoriaResult> ListarCategorias()
+        public IEnumerable<CategoriaViewModel> ListarCategorias()
         {
             return _context
                 .Categorias
                 .AsNoTracking()
-                .Select(x => new CategoriaResult()
+                .Select(x => new CategoriaViewModel()
                 {
                     Id = x.Id,
                     Nome = x.Nome

@@ -7,6 +7,6 @@ namespace Sofia.Domain.Categorias.Repositories
 {
     public interface ICategoriaRepository : IRepositoryBase<Categoria>
     {
-        IEnumerable<CategoriaResult> ListarCategorias();
+        IEnumerable<CategoriaViewModel> ListarCategorias();
     }
 }

@@ -13,6 +13,10 @@ namespace Sofia.WebApi.Controllers
         readonly IUnitOfWork _uow;
         static readonly IEnumerable<Notification> _emptyNotification = new Notification[] { };
 
+        public ControllerBase()
+        {
+        }
+
         public ControllerBase(IUnitOfWork uow)
         {
             _uow = uow;
@@ -46,7 +50,9 @@ namespace Sofia.WebApi.Controllers
             {
                 try
                 {
-                    _uow.Commit();
+                    if (_uow != null)
+                        _uow.Commit();
+
                     tsc.SetResult(Ok(new
                     {
                         success = true,

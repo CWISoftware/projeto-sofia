@@ -95,5 +95,77 @@ namespace Sofia.SharedKernel.Globalization {
                 return ResourceManager.GetString("IsRequired", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conheço.
+        /// </summary>
+        public static string NivelConheco {
+            get {
+                return ResourceManager.GetString("NivelConheco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conhece.
+        /// </summary>
+        public static string NivelConhecoTerceiraPessoa {
+            get {
+                return ResourceManager.GetString("NivelConhecoTerceiraPessoa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domino.
+        /// </summary>
+        public static string NivelDomino {
+            get {
+                return ResourceManager.GetString("NivelDomino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domina.
+        /// </summary>
+        public static string NivelDominoTerceiraPessoa {
+            get {
+                return ResourceManager.GetString("NivelDominoTerceiraPessoa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sou mito.
+        /// </summary>
+        public static string NivelMito {
+            get {
+                return ResourceManager.GetString("NivelMito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mita.
+        /// </summary>
+        public static string NivelMitoTerceiraPessoa {
+            get {
+                return ResourceManager.GetString("NivelMitoTerceiraPessoa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testei.
+        /// </summary>
+        public static string NivelTestei {
+            get {
+                return ResourceManager.GetString("NivelTestei", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testou.
+        /// </summary>
+        public static string NivelTesteiTerceiraPessoa {
+            get {
+                return ResourceManager.GetString("NivelTesteiTerceiraPessoa", resourceCulture);
+            }
+        }
     }
 }

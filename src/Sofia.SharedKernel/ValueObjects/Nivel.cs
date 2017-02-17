@@ -3,9 +3,9 @@
     public enum Nivel : byte
     {
         Mito = 4,
-        AutoSuficiente = 3,
+        Domino = 3,
         Conheco = 2,
-        Experimentar = 1,
+        Testei = 1,
         NaoConheco = 0
     }
 }

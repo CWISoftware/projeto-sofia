@@ -129,4 +129,28 @@
   <data name="IsRequired" xml:space="preserve">
     <value>O campo "{0}" deve ser informado.</value>
   </data>
+  <data name="NivelConheco" xml:space="preserve">
+    <value>Conheço</value>
+  </data>
+  <data name="NivelConhecoTerceiraPessoa" xml:space="preserve">
+    <value>Conhece</value>
+  </data>
+  <data name="NivelDomino" xml:space="preserve">
+    <value>Domino</value>
+  </data>
+  <data name="NivelDominoTerceiraPessoa" xml:space="preserve">
+    <value>Domina</value>
+  </data>
+  <data name="NivelMito" xml:space="preserve">
+    <value>Sou mito</value>
+  </data>
+  <data name="NivelMitoTerceiraPessoa" xml:space="preserve">
+    <value>Mita</value>
+  </data>
+  <data name="NivelTestei" xml:space="preserve">
+    <value>Testei</value>
+  </data>
+  <data name="NivelTesteiTerceiraPessoa" xml:space="preserve">
+    <value>Testou</value>
+  </data>
 </root>

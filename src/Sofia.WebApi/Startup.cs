@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -14,6 +15,10 @@ namespace Sofia.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
+                .AddMvcOptions(options =>
+                {
+                    var a = options.InputFormatters;
+                })
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.Formatting = Formatting.Indented;

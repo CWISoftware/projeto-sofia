@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace Sofia.WebApi.Controllers
 {
-    [Route("v1/avaliacao")]
+    [Route("avaliacao")]
     public class AvaliacaoController : ControllerBase
     {
-        readonly AvaliacaoCommandHandler _categoriaCommandHandler;
+        readonly AvaliacaoCommandHandler _avaliacaoCommandHandler;
 
         public AvaliacaoController(AvaliacoesContext uow,
             AvaliacaoCommandHandler avaliacaoCommandHandler) : base(uow)
         {
-            _categoriaCommandHandler = avaliacaoCommandHandler;
+            _avaliacaoCommandHandler = avaliacaoCommandHandler;
         }
 
         [HttpPost]
@@ -21,9 +21,9 @@ namespace Sofia.WebApi.Controllers
         {
             return await Task.Run(() =>
             {
-                _categoriaCommandHandler.Handle(command);
+                _avaliacaoCommandHandler.Handle(command);
 
-                return Response(_categoriaCommandHandler.Notifications);
+                return Response(_avaliacaoCommandHandler.Notifications);
             });
         }
     }

@@ -37,11 +37,14 @@
   <ItemGroup>
     <Compile Include="Avaliacoes\Commands\AtualizarNivelCommand.cs" />
     <Compile Include="Avaliacoes\Commands\AvaliacaoCommandHandler.cs" />
+    <Compile Include="Avaliacoes\Commands\PesquisarPorTecnologiasCommand.cs" />
     <Compile Include="Avaliacoes\Entities\Avaliacao.cs" />
     <Compile Include="Avaliacoes\Entities\Colaborador.cs" />
     <Compile Include="Avaliacoes\Entities\Tecnologia.cs" />
+    <Compile Include="Avaliacoes\Queries\ColaboradorViewModel.cs" />
+    <Compile Include="Avaliacoes\Queries\TecnologiaViewModel.cs" />
     <Compile Include="Avaliacoes\Repositories\IAvaliacaoRepository.cs" />
-    <Compile Include="Categorias\Queries\CategoriaResult.cs" />
+    <Compile Include="Categorias\Queries\CategoriaViewModel.cs" />
     <Compile Include="Categorias\Entities\Categoria.cs" />
     <Compile Include="Categorias\Commands\AtualizarCategoriaCommand.cs" />
     <Compile Include="Categorias\Commands\CategoriaCommandHandler.cs" />
@@ -55,7 +58,6 @@
     <Compile Include="Tecnologias\Entities\Tecnologia.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Avaliacoes\Queries\" />
     <Folder Include="Avaliacoes\Validations\" />
     <Folder Include="Colaboradores\Commands\" />
     <Folder Include="Colaboradores\Queries\" />

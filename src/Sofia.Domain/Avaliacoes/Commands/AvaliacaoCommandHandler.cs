@@ -1,14 +1,18 @@
-﻿using Core.Crosscutting.Commands;
+﻿using System;
+using Core.Crosscutting.Commands;
 using Core.Crosscutting.Validators;
 using Sofia.Domain.Avaliacoes.Entities;
+using Sofia.Domain.Avaliacoes.Queries;
 using Sofia.Domain.Avaliacoes.Repositories;
 using Sofia.SharedKernel.ValueObjects;
+using System.Collections.Generic;
 
 namespace Sofia.Domain.Avaliacoes.Commands
 {
     public class AvaliacaoCommandHandler :
         Notifiable,
-        ICommandHandler<AtualizarNivelCommand>
+        ICommandHandler<AtualizarNivelCommand>,
+        IQueryHandler<PesquisarPorTecnologiasCommand, IEnumerable<ColaboradorViewModel>>
     {
         readonly IAvaliacaoRepository _avaliacaoRepository;
 
@@ -46,6 +50,11 @@ namespace Sofia.Domain.Avaliacoes.Commands
 
                 AddNotifications(avaliacao.Notifications);
             }
+        }
+
+        public IEnumerable<ColaboradorViewModel> Retrieve(PesquisarPorTecnologiasCommand query)
+        {
+            return _avaliacaoRepository.Retrieve(query);
         }
     }
 }
