@@ -87,23 +87,22 @@ namespace Sofia.Infrastructure.Avaliacoes.Repositories
                     conn.Query<ColaboradorViewModel, TecnologiaViewModel, ColaboradorViewModel>(sql,
                     param: new { tecnologia = query.Texto ?? "%" },
                     splitOn: "Nome",
-                    map: (pColaborador, pTecnologia) =>
+                    map: (colaboradorIn, tecnologiaIn) =>
                  {
                      ColaboradorViewModel colaborador;
 
-                     pTecnologia.NivelPorExtenso = NivelPorExtenso.ConverterParaTerceiraPessoa(pTecnologia.Nivel);
+                     tecnologiaIn.NivelPorExtenso = NivelPorExtenso.ConverterParaTerceiraPessoa(tecnologiaIn.Nivel);
 
-                     if (dic.TryGetValue(pColaborador.Id, out colaborador))
-                         colaborador.Tecnologias.Add(pTecnologia);
-                     else
+                     if (!dic.TryGetValue(colaboradorIn.Id, out colaborador))
                      {
-                         colaborador = pColaborador;
-                         colaborador.Tecnologias.Add(pTecnologia);
-                         dic.Add(pColaborador.Id, pColaborador);
+                         dic.Add(colaboradorIn.Id, colaboradorIn);
+                         colaborador = colaboradorIn;
                      }
 
+                     colaborador.Tecnologias.Add(tecnologiaIn);
+
                      return colaborador;
-                 });
+                 }).Distinct();
             }
         }
     }

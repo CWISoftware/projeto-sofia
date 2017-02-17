@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sofia.Domain.Avaliacoes.Queries
 {
+    [DebuggerDisplay("Id = {Id}, Nome = {Nome}")]
     public class ColaboradorViewModel
     {
         public ColaboradorViewModel()
