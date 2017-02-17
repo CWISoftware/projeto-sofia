@@ -1,0 +1,15 @@
+configuration: Release
+
+before_build:
+    -nuget restore
+
+build:
+ 
+  publish_wap: true   
+  verbosity: normal
+
+notifications:
+
+  - provider: Slack
+    incoming_webhook: https://hooks.slack.com/services/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
+
