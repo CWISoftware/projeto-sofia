@@ -1,7 +1,7 @@
 # projeto-sofia
 
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/2neqy4jmns4gfd4e?svg=true)](https://ci.appveyor.com/project/brunotrassante/projeto-sofia)
-[![sonarqube](https://sonarqube.com/api/badges/gate?key=2b68ae5b5cd4b5113db54dc2886ddca14662e87a)](https://sonarqube.com/api/badges/gate?key=2b68ae5b5cd4b5113db54dc2886ddca14662e87a)
+[![sonarqube](https://sonarqube.com/api/badges/gate?key=2b68ae5b5cd4b5113db54dc2886ddca14662e87a)](https://sonarqube.com/dashboard?id=cwi-projeto-sofia)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/81f66d35cfab4776b60fe2fc7dafbb52)](https://www.codacy.com/app/brunotrassante/projeto-sofia?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CWISoftware/projeto-sofia&amp;utm_campaign=Badge_Grade)
 
 **projeto-sofia** tem como missão o fortalecimento da cultura de desenvolvimento de software das empresas, através da gestão do conhecimento das skills tecnológicas dos profissionais.
