@@ -1,7 +1,14 @@
 configuration: Release
 
+install:
+  - ps: Install-Product node "Stable"
+  - npm install -g npm
+  - ps: $env:path = $env:appdata + "\npm;" + $env:path
+  
 before_build:
   - nuget restore
+  - cd src/Sofia.WebApp/
+  - npm install
 
 build:
  
