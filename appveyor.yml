@@ -4,12 +4,17 @@ install:
   - ps: Install-Product node "Stable"
   - npm install -g npm
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
-  
+     
 before_build:
   - nuget restore
   - cd src/Sofia.WebApp/
   - npm install
 
+build_script:
+  - choco install "msbuild-sonarqube-runner" -y
+  - MSBuild.SonarQube.Runner.exe begin /k:"cwi-projeto-sofia" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=2b68ae5b5cd4b5113db54dc2886ddca14662e87a"
+  - msbuild "Sofia.sln"
+  - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=2b68ae5b5cd4b5113db54dc2886ddca14662e87a"
 build:
  
   publish_wap: true   
