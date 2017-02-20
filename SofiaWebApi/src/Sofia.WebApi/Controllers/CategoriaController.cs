@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Sofia.WebApi.Controllers
 {
-    [Route("categorias")]
+    [Route("v1/categorias")]
     public class CategoriaController : ControllerBase
     {
         readonly CategoriaCommandHandler _categoriaCommandHandler;

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Sofia.WebApi.Controllers
 {
-    [Route("busca")]
+    [Route("v1/busca")]
     public class BuscaController : ControllerBase
     {
         readonly AvaliacaoCommandHandler _avaliacaoCommandHandler;

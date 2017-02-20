@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 
 //shared
 import { TopBarComponent } from './components/shared/top-bar/top-bar.component';
+import { UsuarioLogadoComponent } from './components/shared/usuario-logado/usuario-logado.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { CaixaPesqusiaComponent } from './components/shared/caixa-pesqusia/caixa-pesqusia.component';
-import { ListaColaboradoresComponent } from './components/lista-colaboradores/lista-colaboradores.component';
-import { DashboardCategoriasComponent } from './components/shared/dashboard-categorias/dashboard-categorias.component';
+import { DashboardCategoriasComponent } from './components/dashboard-categorias/dashboard-categorias.component';
+import { ResultadoPesquisaComponent } from './components/resultado-pesquisa/resultado-pesquisa.component';
+import { CaixaPesqusiaComponent } from './components/caixa-pesqusia/caixa-pesqusia.component';
 
 //pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
+
 
 @NgModule({
   declarations: [
@@ -23,8 +25,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     TopBarComponent,
     FooterComponent,
     CaixaPesqusiaComponent,
-    ListaColaboradoresComponent,
-    DashboardCategoriasComponent
+    DashboardCategoriasComponent,
+    ResultadoPesquisaComponent,
+    UsuarioLogadoComponent
   ],
   imports: [
     BrowserModule,

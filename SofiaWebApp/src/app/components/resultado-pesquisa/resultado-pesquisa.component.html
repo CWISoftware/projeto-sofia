@@ -1,7 +1,7 @@
 <hr>
 <div class="container">
   <div class="columns">
-    <div class="column is-3">
+    <div class="column is-3" *ngFor="let colaborador of listaColaboradores">
       <div class="panel">
         <div class="panel">
           <p class="is-marginless">
@@ -12,20 +12,15 @@
       <div class="panel">
         <div class="columns">
           <div class="column">
-            <div class="panel-block-item">Fulano de Tal</div>
+            <div class="panel-block-item">{{colaborador.nome}}</div>
           </div>
         </div>
-      </div>
-
-      <div class="panel">
         <div class="columns">
-          <div class="column has-text-left">
-            <i class="fa fa-heart"></i>
-            <i class="fa fa-heart"></i>
-            <i class="fa fa-heart"></i>
+          <div class="column has-text-left" *ngFor="let tecnologia of colaborador.tecnologias">
+            <img class="img-circle tecnologia" src="{{tecnologia.icone}}" alt="{{tecnologia.nome}}" />
+            <i class="fa">{{tecnologia.nivel}} - {{tecnologia.nivelPorExtenso}}</i>            
           </div>
         </div>
-
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
-﻿using System;
-using Core.Crosscutting.Commands;
+﻿using Core.Crosscutting.Commands;
 using Core.Crosscutting.Validators;
 using Sofia.Domain.Avaliacoes.Entities;
 using Sofia.Domain.Avaliacoes.Queries;

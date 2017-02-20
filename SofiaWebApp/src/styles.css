@@ -2,3 +2,13 @@
 .img-circle{
     border-radius: 50%;
 }
+
+.nav-perfil{
+    max-height: 45px;
+    max-width: 45px;
+}
+
+.tecnologia{
+    max-height: 45px;
+    max-width: 45px;
+}

@@ -1,7 +1,6 @@
 ﻿using Core.Crosscutting.Runtime;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -16,15 +15,13 @@ namespace Sofia.WebApi
 
         public Startup(IHostingEnvironment env)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+            var configurationBuilder = new ConfigurationBuilder()
+               .SetBasePath(env.ContentRootPath)
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+               .AddEnvironmentVariables();
 
-            Configuration = builder.Build();
-
-            Runtime.ConnectionString = Configuration.GetConnectionString("SofiaConnectionString");
+            Configuration = configurationBuilder.Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -40,6 +37,9 @@ namespace Sofia.WebApi
                 });
 
             services.AddCors();
+
+            // Runtime
+            Runtime.ConnectionString = Configuration.GetConnectionString("SofiaConnectionString");
 
             // Avalicao
             services.AddScoped<Infrastructure.Avaliacoes.AvaliacoesContext, Infrastructure.Avaliacoes.AvaliacoesContext>();
