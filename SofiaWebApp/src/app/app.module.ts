@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 //root
 import { AppComponent } from './app.component';
@@ -16,7 +17,20 @@ import { CaixaPesqusiaComponent } from './components/caixa-pesqusia/caixa-pesqus
 
 //pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PerfilUsuarioPageComponent } from './pages/perfil-usuario-page/perfil-usuario-page.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+
+const appRoutes: Routes = [
+  { path: 'perfil', component: PerfilUsuarioPageComponent },
+  { path: '', component: HomePageComponent },
+  {
+    path: '',
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -27,14 +41,16 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     CaixaPesqusiaComponent,
     DashboardCategoriasComponent,
     ResultadoPesquisaComponent,
-    UsuarioLogadoComponent
+    UsuarioLogadoComponent,
+    PerfilUsuarioPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
-export class AppModule { }
+}) export class AppModule { }

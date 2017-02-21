@@ -1,11 +1,7 @@
-<app-top-bar></app-top-bar>
 <div class="section">
     <app-dashboard-categorias></app-dashboard-categorias>
 </div>
 <div class="section">
     <app-caixa-pesqusia (listaColaboradoresChanged)='handleEvent($event)'></app-caixa-pesqusia>
     <app-resultado-pesquisa  [listaColaboradores]="resultadoPesquisa"></app-resultado-pesquisa>
-</div>
-<div class="section">
-    <app-footer></app-footer>
 </div>

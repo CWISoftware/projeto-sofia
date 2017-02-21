@@ -29,7 +29,6 @@ export class CaixaPesqusiaComponent implements OnInit {
       .buscar(this.txtPesquisa)
       .subscribe((result) => {        
         this.listaColaboradores = result;
-        // this.listaColaboradoresChanged.emit(this.listaColaboradores);
         this.listaColaboradoresChanged.next(this.listaColaboradores);
         console.log(this.listaColaboradores);
       });
