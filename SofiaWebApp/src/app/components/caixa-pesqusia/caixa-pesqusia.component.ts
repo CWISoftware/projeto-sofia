@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BuscarColaboradoresService } from '../../services/buscar-colaboradores.service';
-import { ColaboradorViewModel } from '../../services/buscar-colaboradores.service';
 import 'rxjs/Rx';
+import { BuscarColaboradoresService } from '../../services/buscar-colaboradores.service';
+import { BuscarColaboradorPorTecnologiasResult } from '../../services/buscar-colaboradores.service';
 
 @Component({
   selector: 'app-caixa-pesqusia',
@@ -11,10 +11,10 @@ import 'rxjs/Rx';
 export class CaixaPesqusiaComponent implements OnInit {
   
   @Input() 
-  listaColaboradores: ColaboradorViewModel[];
+  listaColaboradores: BuscarColaboradorPorTecnologiasResult[];
   
   @Output() 
-  listaColaboradoresChanged: EventEmitter<ColaboradorViewModel[]> = new EventEmitter();
+  listaColaboradoresChanged: EventEmitter<BuscarColaboradorPorTecnologiasResult[]> = new EventEmitter();
 
   txtPesquisa: string;
 
@@ -30,7 +30,6 @@ export class CaixaPesqusiaComponent implements OnInit {
       .subscribe((result) => {        
         this.listaColaboradores = result;
         this.listaColaboradoresChanged.next(this.listaColaboradores);
-        console.log(this.listaColaboradores);
       });
   }
 }

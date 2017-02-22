@@ -9,20 +9,20 @@ export class BuscarColaboradoresService {
 
   constructor(private _http: Http) { }
 
-  buscar(tecnologia: string): Observable<ColaboradorViewModel[]> {
+  buscar(tecnologia: string): Observable<BuscarColaboradorPorTecnologiasResult[]> {
     return this._http
       .get(this._buscaUrl + encodeURIComponent(tecnologia))
       .map(res => res.json().data);
   }
 }
 
-export interface ColaboradorViewModel {
+export interface BuscarColaboradorPorTecnologiasResult {
     id: number;
     nome: string;
-    tecnologias: TecnologiaViewModel[];
+    tecnologias: BuscarColaboradorPorTecnologiasTecnologiaResult[];
 }
 
-export interface TecnologiaViewModel {
+export interface BuscarColaboradorPorTecnologiasTecnologiaResult {
     nome: string;
     icone: string;
     nivel: number;

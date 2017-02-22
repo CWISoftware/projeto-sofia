@@ -9,16 +9,20 @@ export class TecnologiaService {
 
   constructor(private _http: Http) { }
 
-  buscar(tecnologia: AvaliarNovaTecnologia) {
+  //TODOC
+  avaliarNovaTecnologia(command: AvaliarNovaTecnologiaCommand) {
     return this._http
-      .post(this._buscaUrl, tecnologia);
+      .post(this._buscaUrl, command)
+      .map((response) => {
+        console.log(response);
+      });
   }
 }
 
-export interface AvaliarNovaTecnologia {
-  tecnologia:number,
-  idCategoria:number,
-  idColaborador:number;
-  nivel:string;
-  iconeUrl:string;
+export interface AvaliarNovaTecnologiaCommand {
+  tecnologia: string;
+  idCategoria: number;
+  idColaborador: number;
+  nivel: string;
+  iconeUrl: string;
 }
