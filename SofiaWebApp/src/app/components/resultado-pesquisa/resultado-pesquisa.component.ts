@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { BuscarColaboradoresService } from '../../services/buscar-colaboradores.service';
-import { ColaboradorViewModel } from '../../services/buscar-colaboradores.service';
+import { BuscarColaboradorPorTecnologiasResult } from '../../services/buscar-colaboradores.service';
 
 @Component({
   selector: 'app-resultado-pesquisa',
@@ -8,7 +8,7 @@ import { ColaboradorViewModel } from '../../services/buscar-colaboradores.servic
 })
 export class ResultadoPesquisaComponent implements OnInit {
 
-  @Input() listaColaboradores: ColaboradorViewModel[]
+  @Input() listaColaboradores: BuscarColaboradorPorTecnologiasResult[]
 
   constructor() { }
 

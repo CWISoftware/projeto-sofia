@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CaixaPesqusiaComponent } from './../../components/caixa-pesqusia/caixa-pesqusia.component';
 import { ResultadoPesquisaComponent } from './../../components/resultado-pesquisa/resultado-pesquisa.component';
-import { ColaboradorViewModel } from '../../services/buscar-colaboradores.service';
+import { BuscarColaboradorPorTecnologiasResult } from '../../services/buscar-colaboradores.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +10,7 @@ import { ColaboradorViewModel } from '../../services/buscar-colaboradores.servic
 })
 export class HomePageComponent implements OnInit {
 
-  resultadoPesquisa:ColaboradorViewModel[];
+  resultadoPesquisa:BuscarColaboradorPorTecnologiasResult[];
 
 	public handleEvent(resultadoPesquisa){
     this.resultadoPesquisa = resultadoPesquisa;
