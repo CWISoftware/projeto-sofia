@@ -1,4 +1,4 @@
-﻿namespace Core.Crosscutting.Commands
+﻿namespace Sofia.SharedKernel.Commands
 {
     /// <summary>
     /// Contract of CommandResult.

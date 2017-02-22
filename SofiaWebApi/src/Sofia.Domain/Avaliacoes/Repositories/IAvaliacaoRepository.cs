@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Domain;
+﻿using Sofia.SharedKernel.Domain;
 using Sofia.Domain.Avaliacoes.Commands.Inputs;
 using Sofia.Domain.Avaliacoes.Commands.Results;
 using Sofia.Domain.Avaliacoes.Entities;

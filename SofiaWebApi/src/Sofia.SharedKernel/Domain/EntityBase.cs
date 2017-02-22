@@ -1,7 +1,7 @@
-﻿using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Validators;
 using System;
 
-namespace Core.Crosscutting.Domain
+namespace Sofia.SharedKernel.Domain
 {
     // <summary>
     /// Entity base class 

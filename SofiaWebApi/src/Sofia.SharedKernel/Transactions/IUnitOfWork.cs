@@ -1,4 +1,4 @@
-﻿namespace Core.Crosscutting.Transactions
+﻿namespace Sofia.SharedKernel.Transactions
 {
     public interface IUnitOfWork
     {

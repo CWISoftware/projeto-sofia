@@ -1,4 +1,4 @@
-﻿namespace Core.Crosscutting.Validators
+﻿namespace Sofia.SharedKernel.Validators
 { 
     public class Notification
     {

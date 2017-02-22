@@ -1,5 +1,5 @@
-﻿using Core.Crosscutting.Domain;
-using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Domain;
+using Sofia.SharedKernel.Validators;
 using Sofia.SharedKernel.Globalization;
 
 namespace Sofia.SharedKernel.ValueObjects

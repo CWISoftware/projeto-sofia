@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Validators;
 using Sofia.Domain.Categorias.Entities;
 using Sofia.SharedKernel.Globalization;
 

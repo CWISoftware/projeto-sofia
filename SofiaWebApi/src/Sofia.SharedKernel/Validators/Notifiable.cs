@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Core.Crosscutting.Validators
+namespace Sofia.SharedKernel.Validators
 {
     public abstract class Notifiable
     {

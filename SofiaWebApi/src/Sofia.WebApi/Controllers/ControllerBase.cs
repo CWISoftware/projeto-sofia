@@ -1,5 +1,5 @@
-﻿using Core.Crosscutting.Transactions;
-using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Transactions;
+using Sofia.SharedKernel.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Sofia.SharedKernel.Globalization;
 using System.Collections.Generic;

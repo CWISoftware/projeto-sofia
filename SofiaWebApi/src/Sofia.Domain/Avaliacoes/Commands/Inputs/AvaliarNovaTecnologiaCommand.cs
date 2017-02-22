@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Commands;
+﻿using Sofia.SharedKernel.Commands;
 using Sofia.SharedKernel.ValueObjects;
 
 namespace Sofia.Domain.Avaliacoes.Commands.Inputs

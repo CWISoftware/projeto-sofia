@@ -1,5 +1,5 @@
-﻿using Core.Crosscutting.Commands;
-using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Commands;
+using Sofia.SharedKernel.Validators;
 using Sofia.Domain.Avaliacoes.Commands.Inputs;
 using Sofia.Domain.Avaliacoes.Entities;
 using Sofia.Domain.Avaliacoes.Repositories;

@@ -70,10 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.Crosscutting\Core.Crosscutting.csproj">
-      <Project>{56F7EB43-453A-49C3-AA51-D92E8A61D60D}</Project>
-      <Name>Core.Crosscutting</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sofia.Domain\Sofia.Domain.csproj">
       <Project>{8C228C97-9AC5-491E-9855-A33B784CE329}</Project>
       <Name>Sofia.Domain</Name>

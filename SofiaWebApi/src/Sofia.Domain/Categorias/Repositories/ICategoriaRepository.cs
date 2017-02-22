@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Domain;
+﻿using Sofia.SharedKernel.Domain;
 using Sofia.Domain.Categorias.Commands.Results;
 using Sofia.Domain.Categorias.Entities;
 using System.Collections.Generic;

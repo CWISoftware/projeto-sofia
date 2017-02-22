@@ -19,7 +19,7 @@
   "frameworks": {
     "net462": {
       "dependencies": {
-        "Core.Crosscutting": {
+        "Sofia.SharedKernel": {
           "target": "project"
         },
         "Sofia.Domain": {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Crosscutting.Events
+namespace Sofia.SharedKernel.Events
 {
     public interface IDomainEvent
     {

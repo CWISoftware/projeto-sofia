@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Runtime;
+﻿using Sofia.SharedKernel.Runtime;
 using Dapper;
 using Sofia.Domain.Avaliacoes.Commands.Inputs;
 using Sofia.Domain.Avaliacoes.Commands.Results;

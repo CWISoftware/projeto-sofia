@@ -1,8 +1,8 @@
-﻿using Core.Crosscutting.Validators;
+﻿using Sofia.SharedKernel.Validators;
 using System;
 using System.Linq;
 
-namespace Core.Crosscutting.Domain
+namespace Sofia.SharedKernel.Domain
 {
     /// <summary>
     /// Value Object base (Handles Equality)

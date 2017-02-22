@@ -69,10 +69,6 @@
     <Folder Include="Colaboradores\Validations\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.Crosscutting\Core.Crosscutting.csproj">
-      <Project>{56F7EB43-453A-49C3-AA51-D92E8A61D60D}</Project>
-      <Name>Core.Crosscutting</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sofia.SharedKernel\Sofia.SharedKernel.csproj">
       <Project>{621C8583-5EFD-4261-B03F-CE060E462D90}</Project>
       <Name>Sofia.SharedKernel</Name>

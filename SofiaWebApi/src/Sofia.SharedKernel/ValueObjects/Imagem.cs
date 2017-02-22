@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Domain;
+﻿using Sofia.SharedKernel.Domain;
 
 namespace Sofia.SharedKernel.ValueObjects
 {

@@ -35,13 +35,28 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\EmptyParameter.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="Commands\ICommandResult.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Domain\IRepositoryBase.cs" />
+    <Compile Include="Domain\ValueObjectBase.cs" />
+    <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IDomainEventHandler.cs" />
     <Compile Include="Globalization\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\Runtime.cs" />
     <Compile Include="Services\NivelPorExtenso.cs" />
+    <Compile Include="Transactions\IUnitOfWork.cs" />
+    <Compile Include="Validators\Notifiable.cs" />
+    <Compile Include="Validators\Notification.cs" />
+    <Compile Include="Validators\ValidationContract.cs" />
     <Compile Include="ValueObjects\Versao.cs" />
     <Compile Include="ValueObjects\Nivel.cs" />
     <Compile Include="ValueObjects\Email.cs" />
@@ -54,12 +69,6 @@
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core.Crosscutting\Core.Crosscutting.csproj">
-      <Project>{56F7EB43-453A-49C3-AA51-D92E8A61D60D}</Project>
-      <Name>Core.Crosscutting</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
-namespace Core.Crosscutting.Validators
+namespace Sofia.SharedKernel.Validators
 {
     public class ValidationContract<T> where T : Notifiable
     {

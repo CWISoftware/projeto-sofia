@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Transactions;
+﻿using Sofia.SharedKernel.Transactions;
 
 namespace Sofia.Infrastructure.Categorias
 {

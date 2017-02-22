@@ -1,23 +1,6 @@
 {
   "version": 2,
   "exports": {
-    "Core.Crosscutting/1.0.0": {
-      "type": "project",
-      "framework": ".NETFramework,Version=v4.6.2",
-      "compile": {
-        "bin/Debug/Core.Crosscutting.dll": {}
-      },
-      "runtime": {
-        "bin/Debug/Core.Crosscutting.dll": {}
-      },
-      "contentFiles": {
-        "bin/Debug/Core.Crosscutting.pdb": {
-          "buildAction": "None",
-          "codeLanguage": "any",
-          "copyToOutput": true
-        }
-      }
-    },
     "Sofia.Domain/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.6.2",

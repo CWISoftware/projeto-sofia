@@ -1,4 +1,4 @@
-﻿namespace Core.Crosscutting.Domain
+﻿namespace Sofia.SharedKernel.Domain
 {
     /// <summary>
     /// Contract of Aggregate Root

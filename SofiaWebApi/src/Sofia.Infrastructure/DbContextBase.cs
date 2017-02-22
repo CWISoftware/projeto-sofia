@@ -1,5 +1,5 @@
-﻿using Core.Crosscutting.Runtime;
-using Core.Crosscutting.Transactions;
+﻿using Sofia.SharedKernel.Runtime;
+using Sofia.SharedKernel.Transactions;
 using System.Data.Entity;
 
 namespace Sofia.Infrastructure

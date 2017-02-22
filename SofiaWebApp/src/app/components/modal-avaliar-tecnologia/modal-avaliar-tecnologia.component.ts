@@ -10,41 +10,32 @@ import { AvaliarNovaTecnologiaCommand } from '../../services/tecnologia.service'
 })
 export class ModalAvaliarTecnologiaComponent implements OnInit {
 
-  tecnologia: string;
-  idCategoria: number;
-  idColaborador: number;
-  nivel: string;
-  iconeUrl: string;
+  data: AvaliarNovaTecnologiaCommand;
+  niveis: [{ id: string, nome: string }];
+  categorias: [{ id: number, nome: string }];
 
-  constructor(private tecnologiaService: TecnologiaService) { }
+  constructor(private tecnologiaService: TecnologiaService) {
+    this.data = { tecnologia: "", iconeUrl: "", idCategoria: 0, idColaborador: 0, nivel: "NaoConheco" };
+    this.niveis = [
+      { id: "NaoConheco", nome: "NaoConheco" },
+      { id: "Testei", nome: "Testei" },
+      { id: "Conheco", nome: "Conheco" },
+      { id: "Domino", nome: "Domino" },
+      { id: "Mito", nome: "Mito" }];
+
+    this.categorias = [
+      { id: 1, nome: "Ferramentas" },
+      { id: 2, nome: "Frameworks" },
+      { id: 3, nome: "Banco de Dados" },
+      { id: 4, nome: "Linguagens" }];
+  }
 
   ngOnInit() {
   }
 
   adicionarTecnologia() {
-    let command= this.criarCommand();
-    /*command.tecnologia = this.tecnologia;
-    command.idCategoria = this.idCategoria;
-    command.idColaborador = this.idColaborador;
-    command.nivel = this.nivel;
-    command.iconeUrl = this.iconeUrl;
-    command.tecnologia = "WCF";
-    command.idCategoria = 2;
-    command.idColaborador = 3;
-    command.nivel = "Mito";
-    command.iconeUrl = "https://tonysneed.files.wordpress.com/2016/01/wcf-logo.png";*/
-
+    this.data.idColaborador = 1;
     this.tecnologiaService
-      .avaliarNovaTecnologia(command);
+      .avaliarNovaTecnologia(this.data);
   };
-
-  criarCommand(): AvaliarNovaTecnologiaCommand {
-    return {
-      "tecnologia": "WCF",
-      "idCategoria": 2,
-      "idColaborador": 3,
-      "nivel": "Mito",
-      "iconeUrl": "https://tonysneed.files.wordpress.com/2016/01/wcf-logo.png"
-    };
-  }
 }

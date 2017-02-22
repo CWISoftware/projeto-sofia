@@ -9,25 +9,22 @@
       <!-- Ini Content ... -->
       <label class="label">Tecnologia</label>
       <p class="control">
-        <input class="input" type="text" placeholder="Text input">
+        <input class="input" type="text" placeholder="Text input" [(ngModel)]="data.tecnologia">
       </p>
       <label class="label">Categoria</label>
       <p class="control">
         <span class="select">
-          <select>
-            <option>Ferramentas</option>
-            <option>Linguagens</option>
-            <option>Frameworks</option>
-            <option>Banco de Dados</option>
+          <select [(ngModel)]="data.idCategoria">
+              <option *ngFor="let categoria of categorias" [ngValue]="categoria.id">{{categoria.nome}}</option>
           </select>
         </span>
       </p>
       <p class="control">
-        <label class="radio"><input type="radio" name="nivel">Não conheço</label>
-        <label class="radio"><input type="radio" name="nivel">Testei</label>
-        <label class="radio"><input type="radio" name="nivel">Conheco</label>
-        <label class="radio"><input type="radio" name="nivel">Domino</label>
-        <label class="radio"><input type="radio" name="nivel">Mito</label>
+        <label class="radio" *ngFor="let nivel of niveis"><input type="radio" name="nivel"  [(ngModel)]="data.nivel" value="{{nivel.id}}" >{{nivel.nome}}</label>
+      </p>
+      <label class="label">Ícone</label>
+      <p class="control">
+        <input class="input" type="text" placeholder="Text input" [(ngModel)]="data.iconeUrl">
       </p>
       <!-- Fim Content ... -->
     </section>

@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Domain;
+﻿using Sofia.SharedKernel.Domain;
 using Sofia.SharedKernel.ValueObjects;
 
 namespace Sofia.Domain.Colaboradores.Entities

@@ -1,4 +1,4 @@
-﻿namespace Core.Crosscutting.Runtime
+﻿namespace Sofia.SharedKernel.Runtime
 {
     public static class Runtime
     {

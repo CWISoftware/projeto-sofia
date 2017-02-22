@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Commands;
+﻿using Sofia.SharedKernel.Commands;
 
 namespace Sofia.Domain.Categorias.Commands.Inputs
 {

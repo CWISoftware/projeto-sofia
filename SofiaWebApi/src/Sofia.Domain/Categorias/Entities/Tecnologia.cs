@@ -1,4 +1,4 @@
-﻿using Core.Crosscutting.Domain;
+﻿using Sofia.SharedKernel.Domain;
 using Sofia.Domain.Categorias.Validations;
 using Sofia.SharedKernel.ValueObjects;
 

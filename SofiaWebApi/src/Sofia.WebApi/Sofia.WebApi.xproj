@@ -20,7 +20,6 @@
     <DnxInvisibleContent Include=".bowerrc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.Crosscutting\Core.Crosscutting.csproj" />
     <ProjectReference Include="..\Sofia.Domain\Sofia.Domain.csproj" />
     <ProjectReference Include="..\Sofia.Infrastructure\Sofia.Infrastructure.csproj" />
   </ItemGroup>
