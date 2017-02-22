@@ -8,10 +8,12 @@ namespace Sofia.Infrastructure.Categorias
     {
 
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Tecnologia> Tecnologias { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CategoriaMap());
+            modelBuilder.Configurations.Add(new TecnologiaMap());
         }
     }
 }

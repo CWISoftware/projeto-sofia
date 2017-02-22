@@ -35,38 +35,38 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Avaliacoes\Commands\AtualizarNivelCommand.cs" />
-    <Compile Include="Avaliacoes\Commands\AvaliacaoCommandHandler.cs" />
-    <Compile Include="Avaliacoes\Commands\PesquisarPorTecnologiasCommand.cs" />
+    <Compile Include="Avaliacoes\Commands\Inputs\AtualizarNivelCommand.cs" />
+    <Compile Include="Avaliacoes\Commands\Handlers\AvaliacaoCommandHandler.cs" />
+    <Compile Include="Avaliacoes\Commands\Results\BuscarColaboradorPorTecnologiasTecnologiaResult.cs" />
+    <Compile Include="Avaliacoes\Commands\Results\BuscarColaboradorPorTecnologiasResult.cs" />
+    <Compile Include="Avaliacoes\Commands\Inputs\BuscarColaboradorPorTecnologiasCommand.cs" />
     <Compile Include="Avaliacoes\Entities\Avaliacao.cs" />
     <Compile Include="Avaliacoes\Entities\Colaborador.cs" />
     <Compile Include="Avaliacoes\Entities\Tecnologia.cs" />
-    <Compile Include="Avaliacoes\Queries\ColaboradorViewModel.cs" />
-    <Compile Include="Avaliacoes\Queries\TecnologiaViewModel.cs" />
     <Compile Include="Avaliacoes\Repositories\IAvaliacaoRepository.cs" />
-    <Compile Include="Categorias\Queries\CategoriaViewModel.cs" />
+    <Compile Include="Avaliacoes\Commands\Inputs\AvaliarNovaTecnologiaCommand.cs" />
+    <Compile Include="Categorias\Commands\Inputs\AdicionarTecnologiaCommand.cs" />
+    <Compile Include="Categorias\Commands\Results\ListarCategoriasResult.cs" />
     <Compile Include="Categorias\Entities\Categoria.cs" />
-    <Compile Include="Categorias\Commands\AtualizarCategoriaCommand.cs" />
-    <Compile Include="Categorias\Commands\CategoriaCommandHandler.cs" />
-    <Compile Include="Categorias\Commands\ExcluirCategoriaCommand.cs" />
-    <Compile Include="Categorias\Commands\CriarCategoriaCommand.cs" />
+    <Compile Include="Categorias\Commands\Inputs\AtualizarCategoriaCommand.cs" />
+    <Compile Include="Categorias\Commands\Handlers\CategoriaCommandHandler.cs" />
+    <Compile Include="Categorias\Commands\Inputs\ExcluirCategoriaCommand.cs" />
+    <Compile Include="Categorias\Commands\Inputs\CriarCategoriaCommand.cs" />
     <Compile Include="Categorias\Repositories\ICategoriaRepository.cs" />
+    <Compile Include="Categorias\Validations\TecnologiaContract.cs" />
     <Compile Include="Categorias\Validations\CategoriaContract.cs" />
     <Compile Include="Colaboradores\Entities\Colaborador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tecnologias\Entities\Categoria.cs" />
-    <Compile Include="Tecnologias\Entities\Tecnologia.cs" />
+    <Compile Include="Categorias\Entities\Tecnologia.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Avaliacoes\Validations\" />
-    <Folder Include="Colaboradores\Commands\" />
+    <Folder Include="Colaboradores\Commands\Handlers\" />
+    <Folder Include="Colaboradores\Commands\Inputs\" />
+    <Folder Include="Colaboradores\Commands\Results\" />
     <Folder Include="Colaboradores\Queries\" />
     <Folder Include="Colaboradores\Repositories\" />
     <Folder Include="Colaboradores\Validations\" />
-    <Folder Include="Tecnologias\Commands\" />
-    <Folder Include="Tecnologias\Queries\" />
-    <Folder Include="Tecnologias\Repositories\" />
-    <Folder Include="Tecnologias\Validations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core.Crosscutting\Core.Crosscutting.csproj">

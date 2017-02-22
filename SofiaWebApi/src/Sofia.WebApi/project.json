@@ -28,6 +28,9 @@
         "Sofia.Infrastructure": {
           "target": "project"
         }
+      },
+      "frameworkAssemblies": {
+        "System.Transactions": "4.0.0.0"
       }
     }
   },

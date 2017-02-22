@@ -42,6 +42,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NivelPorExtenso.cs" />
+    <Compile Include="ValueObjects\Versao.cs" />
     <Compile Include="ValueObjects\Nivel.cs" />
     <Compile Include="ValueObjects\Email.cs" />
     <Compile Include="ValueObjects\NomePessoa.cs" />

@@ -12,6 +12,17 @@ namespace Sofia.Infrastructure.Categorias.Mappings
             HasKey(x => x.Id);
 
             Property(x => x.Nome);
+
+            HasMany(x => x.Tecnologias)
+                .WithRequired(x => x.Categoria)
+                .Map(x => x.ToTable("Tecnologia", "sofia")
+                .MapKey("IdCategoria"));
+
+            Property(x => x.QtdTecnologias);
+
+            Property(x => x.Versao.Numero)
+             .HasColumnName("Versao")
+             .IsConcurrencyToken();
         }
     }
 }

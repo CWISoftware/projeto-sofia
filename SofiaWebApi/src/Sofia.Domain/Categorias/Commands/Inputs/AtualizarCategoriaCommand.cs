@@ -1,6 +1,6 @@
 ﻿using Core.Crosscutting.Commands;
 
-namespace Sofia.Domain.Categorias.Commands
+namespace Sofia.Domain.Categorias.Commands.Inputs
 {
     public class AtualizarCategoriaCommand : ICommand
     {

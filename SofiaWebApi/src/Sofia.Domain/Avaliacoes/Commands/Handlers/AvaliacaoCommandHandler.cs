@@ -1,17 +1,15 @@
 ﻿using Core.Crosscutting.Commands;
 using Core.Crosscutting.Validators;
+using Sofia.Domain.Avaliacoes.Commands.Inputs;
 using Sofia.Domain.Avaliacoes.Entities;
-using Sofia.Domain.Avaliacoes.Queries;
 using Sofia.Domain.Avaliacoes.Repositories;
 using Sofia.SharedKernel.ValueObjects;
-using System.Collections.Generic;
 
-namespace Sofia.Domain.Avaliacoes.Commands
+namespace Sofia.Domain.Avaliacoes.Commands.Handlers
 {
     public class AvaliacaoCommandHandler :
         Notifiable,
-        ICommandHandler<AtualizarNivelCommand>,
-        IQueryHandler<PesquisarPorTecnologiasCommand, IEnumerable<ColaboradorViewModel>>
+        ICommandHandler<AtualizarNivelCommand>
     {
         readonly IAvaliacaoRepository _avaliacaoRepository;
 
@@ -28,7 +26,7 @@ namespace Sofia.Domain.Avaliacoes.Commands
                 var colaborador = _avaliacaoRepository.ObterColaborador(command.IdColaborador);
                 var tecnologia = _avaliacaoRepository.ObterTecnologia(command.IdTecnologia);
 
-                avaliacao = new Avaliacao(colaborador, tecnologia, command.Conceito);
+                avaliacao = new Avaliacao(colaborador, tecnologia, command.Nivel);
 
                 _avaliacaoRepository.Add(avaliacao);
 
@@ -36,24 +34,19 @@ namespace Sofia.Domain.Avaliacoes.Commands
             }
             else
             {
-                if (command.Conceito == Nivel.NaoConheco)
+                if (command.Nivel == Nivel.NaoConheco)
                 {
                     _avaliacaoRepository.Remove(avaliacao);
                 }
                 else
                 {
-                    avaliacao.MudarAvaliacao(command.Conceito);
+                    avaliacao.MudarAvaliacao(command.Nivel);
 
                     _avaliacaoRepository.Update(avaliacao);
                 }
 
                 AddNotifications(avaliacao.Notifications);
             }
-        }
-
-        public IEnumerable<ColaboradorViewModel> Retrieve(PesquisarPorTecnologiasCommand query)
-        {
-            return _avaliacaoRepository.Retrieve(query);
         }
     }
 }

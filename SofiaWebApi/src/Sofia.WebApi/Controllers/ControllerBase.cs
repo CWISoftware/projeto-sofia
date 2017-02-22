@@ -10,14 +10,14 @@ namespace Sofia.WebApi.Controllers
 {
     public class ControllerBase : Controller
     {
-        readonly IUnitOfWork _uow;
+        readonly IUnitOfWork[] _uow;
         static readonly IEnumerable<Notification> _emptyNotification = new Notification[] { };
 
         public ControllerBase()
         {
         }
 
-        public ControllerBase(IUnitOfWork uow)
+        public ControllerBase(params IUnitOfWork[] uow)
         {
             _uow = uow;
         }
@@ -51,7 +51,8 @@ namespace Sofia.WebApi.Controllers
                 try
                 {
                     if (_uow != null)
-                        _uow.Commit();
+                        foreach (var uow in _uow)
+                            uow.Commit();
 
                     tsc.SetResult(Ok(new
                     {

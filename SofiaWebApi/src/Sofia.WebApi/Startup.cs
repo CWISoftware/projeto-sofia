@@ -45,13 +45,13 @@ namespace Sofia.WebApi
             services.AddScoped<Infrastructure.Avaliacoes.AvaliacoesContext, Infrastructure.Avaliacoes.AvaliacoesContext>();
             services.AddTransient<Infrastructure.Avaliacoes.AvaliacoesUnitOfWork, Infrastructure.Avaliacoes.AvaliacoesUnitOfWork>();
             services.AddTransient<Domain.Avaliacoes.Repositories.IAvaliacaoRepository, Infrastructure.Avaliacoes.Repositories.AvaliacaoRepository>();
-            services.AddTransient<Domain.Avaliacoes.Commands.AvaliacaoCommandHandler, Domain.Avaliacoes.Commands.AvaliacaoCommandHandler>();
+            services.AddTransient<Domain.Avaliacoes.Commands.Handlers.AvaliacaoCommandHandler, Domain.Avaliacoes.Commands.Handlers.AvaliacaoCommandHandler>();
 
             // Caegorias
             services.AddScoped<Infrastructure.Categorias.CategoriasContext, Infrastructure.Categorias.CategoriasContext>();
             services.AddTransient<Infrastructure.Categorias.CategoriasUnitOfWork, Infrastructure.Categorias.CategoriasUnitOfWork>();
             services.AddTransient<Domain.Categorias.Repositories.ICategoriaRepository, Infrastructure.Categorias.Repositories.CategoriaRepository>();
-            services.AddTransient<Domain.Categorias.Commands.CategoriaCommandHandler, Domain.Categorias.Commands.CategoriaCommandHandler>();
+            services.AddTransient<Domain.Categorias.Commands.Handlers.CategoriaCommandHandler, Domain.Categorias.Commands.Handlers.CategoriaCommandHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

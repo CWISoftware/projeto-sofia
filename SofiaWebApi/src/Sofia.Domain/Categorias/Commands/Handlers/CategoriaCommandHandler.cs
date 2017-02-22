@@ -1,17 +1,19 @@
 ﻿using Core.Crosscutting.Commands;
 using Core.Crosscutting.Validators;
+using Sofia.Domain.Categorias.Commands.Inputs;
+using Sofia.Domain.Categorias.Commands.Results;
 using Sofia.Domain.Categorias.Entities;
-using Sofia.Domain.Categorias.Queries;
 using Sofia.Domain.Categorias.Repositories;
+using Sofia.SharedKernel.ValueObjects;
 using System.Collections.Generic;
 
-namespace Sofia.Domain.Categorias.Commands
+namespace Sofia.Domain.Categorias.Commands.Handlers
 {
     public class CategoriaCommandHandler : Notifiable,
         ICommandHandler<AtualizarCategoriaCommand>,
         ICommandHandler<CriarCategoriaCommand>,
         ICommandHandler<ExcluirCategoriaCommand>,
-        IQueryHandler<EmptyParameter, IEnumerable<CategoriaViewModel>>
+        ICommandHandler<AdicionarTecnologiaCommand>
     {
 
         readonly ICategoriaRepository _categoriaRepository;
@@ -49,9 +51,15 @@ namespace Sofia.Domain.Categorias.Commands
             AddNotifications(categoria.Notifications);
         }
 
-        public IEnumerable<CategoriaViewModel> Retrieve(EmptyParameter query)
+        public void Handle(AdicionarTecnologiaCommand command)
         {
-            return _categoriaRepository.ListarCategorias();
+            var categoria = _categoriaRepository.Find(command.IdCategoria);
+
+            categoria.AdicionarTecnologia(command.Tecnologia, new Imagem(command.IconeUrl));
+
+            _categoriaRepository.Update(categoria);
+
+            Result = categoria;
         }
     }
 }

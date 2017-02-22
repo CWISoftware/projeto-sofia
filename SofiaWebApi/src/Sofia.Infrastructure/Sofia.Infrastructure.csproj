@@ -57,6 +57,7 @@
     <Compile Include="Avaliacoes\Mappings\ColaboradorMap.cs" />
     <Compile Include="Avaliacoes\Mappings\AvaliacaoMap.cs" />
     <Compile Include="Avaliacoes\Repositories\AvaliacaoRepository.cs" />
+    <Compile Include="Categorias\Mappings\TecnologiaMap.cs" />
     <Compile Include="DbContextBase.cs" />
     <Compile Include="Categorias\CategoriasContext.cs" />
     <Compile Include="Categorias\CategoriasUnitOfWork.cs" />
@@ -64,9 +65,7 @@
     <Compile Include="Categorias\Repositories\CategoriaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

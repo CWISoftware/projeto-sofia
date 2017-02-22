@@ -1,14 +1,14 @@
-﻿using Sofia.Domain.Avaliacoes.Commands;
+﻿using Core.Crosscutting.Runtime;
+using Dapper;
+using Sofia.Domain.Avaliacoes.Commands.Inputs;
+using Sofia.Domain.Avaliacoes.Commands.Results;
 using Sofia.Domain.Avaliacoes.Entities;
-using Sofia.Domain.Avaliacoes.Queries;
 using Sofia.Domain.Avaliacoes.Repositories;
+using Sofia.SharedKernel.Services;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using Dapper;
 using System.Data.SqlClient;
-using Sofia.SharedKernel.Services;
-using Core.Crosscutting.Runtime;
+using System.Linq;
 
 namespace Sofia.Infrastructure.Avaliacoes.Repositories
 {
@@ -68,9 +68,9 @@ namespace Sofia.Infrastructure.Avaliacoes.Repositories
             _context.Entry(entity).State = EntityState.Modified;
         }
 
-        public IEnumerable<ColaboradorViewModel> Retrieve(PesquisarPorTecnologiasCommand query)
+        public IEnumerable<BuscarColaboradorPorTecnologiasResult> BuscarColaboradorPortecnologias(BuscarColaboradorPorTecnologiasCommand command)
         {
-            var dic = new Dictionary<int, ColaboradorViewModel>();
+            var dic = new Dictionary<int, BuscarColaboradorPorTecnologiasResult>();
 
             var sql = @"SELECT
                     ColaboradorId Id
@@ -85,12 +85,12 @@ namespace Sofia.Infrastructure.Avaliacoes.Repositories
             {
                 conn.Open();
                 return
-                    conn.Query<ColaboradorViewModel, TecnologiaViewModel, ColaboradorViewModel>(sql,
-                    param: new { tecnologia = query.Texto ?? "%" },
+                    conn.Query<BuscarColaboradorPorTecnologiasResult, BuscarColaboradorPorTecnologiasTecnologiaResult, BuscarColaboradorPorTecnologiasResult>(sql,
+                    param: new { tecnologia = command.Texto ?? "%" },
                     splitOn: "Nome",
                     map: (colaboradorIn, tecnologiaIn) =>
                  {
-                     ColaboradorViewModel colaborador;
+                     BuscarColaboradorPorTecnologiasResult colaborador;
 
                      tecnologiaIn.NivelPorExtenso = NivelPorExtenso.ConverterParaTerceiraPessoa(tecnologiaIn.Nivel);
 

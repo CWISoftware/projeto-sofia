@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sofia.Domain.Categorias.Commands;
+using Sofia.Domain.Categorias.Commands.Handlers;
+using Sofia.Domain.Categorias.Commands.Inputs;
+using Sofia.Domain.Categorias.Repositories;
 using Sofia.Infrastructure.Categorias;
 using System.Threading.Tasks;
 
@@ -9,11 +11,15 @@ namespace Sofia.WebApi.Controllers
     public class CategoriaController : ControllerBase
     {
         readonly CategoriaCommandHandler _categoriaCommandHandler;
+        readonly ICategoriaRepository _categoriaRepository;
 
-        public CategoriaController(CategoriasContext uow,
-            CategoriaCommandHandler categoriaCommandHandler) : base(uow)
+        public CategoriaController(
+            CategoriasContext uow,
+            CategoriaCommandHandler categoriaCommandHandler,
+            ICategoriaRepository categoriaRepository) : base(uow)
         {
             _categoriaCommandHandler = categoriaCommandHandler;
+            _categoriaRepository = categoriaRepository;
         }
 
         [HttpPost]
@@ -54,7 +60,7 @@ namespace Sofia.WebApi.Controllers
         {
             return await Task.Run(() =>
             {
-                return Response(_categoriaCommandHandler.Retrieve(null));
+                return Response(_categoriaRepository.ListarCategorias());
             });
         }
 

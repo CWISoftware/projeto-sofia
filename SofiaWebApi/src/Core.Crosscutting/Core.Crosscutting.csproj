@@ -39,8 +39,6 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="Commands\ICommandResult.cs" />
-    <Compile Include="Commands\IQueryHandler.cs" />
-    <Compile Include="Commands\IQueryResult.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Domain\IRepositoryBase.cs" />

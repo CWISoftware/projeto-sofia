@@ -1,15 +1,21 @@
 ﻿using Core.Crosscutting.Domain;
+using Sofia.Domain.Categorias.Validations;
 using Sofia.SharedKernel.ValueObjects;
 
-namespace Sofia.Domain.Tecnologias.Entities
+namespace Sofia.Domain.Categorias.Entities
 {
-    public class Tecnologia : EntityBase<Tecnologia>, IAggregateRoot
+    public class Tecnologia : EntityBase<Tecnologia>
     {
-        public Tecnologia(string nome, Categoria categoria, Imagem icone)
+        //EF
+        protected Tecnologia() { }
+
+        public Tecnologia(Categoria categoria, string nome, Imagem icone)
         {
             Nome = nome;
             Categoria = categoria;
             Icone = icone;
+
+            TecnologiaContract.IsValid(this);
         }
 
         public string Nome { get; private set; }

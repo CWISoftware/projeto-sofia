@@ -1,6 +1,6 @@
-﻿namespace Sofia.Domain.Avaliacoes.Queries
+﻿namespace Sofia.Domain.Avaliacoes.Commands.Results
 {
-    public class TecnologiaViewModel
+    public class BuscarColaboradorPorTecnologiasTecnologiaResult
     {
         public string Nome { get; set; }
         public string Icone { get; set; }

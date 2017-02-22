@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sofia.Domain.Avaliacoes.Commands;
+using Sofia.Domain.Avaliacoes.Commands.Handlers;
+using Sofia.Domain.Avaliacoes.Commands.Inputs;
 using Sofia.Infrastructure.Avaliacoes;
 using System.Threading.Tasks;
 

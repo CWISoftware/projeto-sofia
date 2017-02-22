@@ -1,5 +1,5 @@
-﻿using Sofia.Domain.Categorias.Entities;
-using Sofia.Domain.Categorias.Queries;
+﻿using Sofia.Domain.Categorias.Commands.Results;
+using Sofia.Domain.Categorias.Entities;
 using Sofia.Domain.Categorias.Repositories;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,16 +25,17 @@ namespace Sofia.Infrastructure.Categorias.Repositories
         {
             return _context
                 .Categorias
+                .Include(x => x.Tecnologias)
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
         }
 
-        public IEnumerable<CategoriaViewModel> ListarCategorias()
+        public IEnumerable<ListarCategoriasResult> ListarCategorias()
         {
             return _context
                 .Categorias
                 .AsNoTracking()
-                .Select(x => new CategoriaViewModel()
+                .Select(x => new ListarCategoriasResult()
                 {
                     Id = x.Id,
                     Nome = x.Nome

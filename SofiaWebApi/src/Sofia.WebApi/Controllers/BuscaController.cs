@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sofia.Domain.Avaliacoes.Commands;
+using Sofia.Domain.Avaliacoes.Commands.Inputs;
+using Sofia.Domain.Avaliacoes.Repositories;
 using System.Threading.Tasks;
 
 namespace Sofia.WebApi.Controllers
@@ -7,11 +8,11 @@ namespace Sofia.WebApi.Controllers
     [Route("v1/busca")]
     public class BuscaController : ControllerBase
     {
-        readonly AvaliacaoCommandHandler _avaliacaoCommandHandler;
+        readonly IAvaliacaoRepository _avaliacaoRepository;
 
-        public BuscaController(AvaliacaoCommandHandler avaliacaoCommandHandler)
+        public BuscaController(IAvaliacaoRepository avaliacaoRepository)
         {
-            _avaliacaoCommandHandler = avaliacaoCommandHandler;
+            _avaliacaoRepository = avaliacaoRepository;
         }
 
         [HttpGet]
@@ -19,7 +20,7 @@ namespace Sofia.WebApi.Controllers
         {
             return await Task.Run(() =>
             {
-                return Response(_avaliacaoCommandHandler.Retrieve(new PesquisarPorTecnologiasCommand() { Texto = texto }));
+                return Response(_avaliacaoRepository.BuscarColaboradorPortecnologias(new BuscarColaboradorPorTecnologiasCommand() { Texto = texto }));
             });
         }
     }
