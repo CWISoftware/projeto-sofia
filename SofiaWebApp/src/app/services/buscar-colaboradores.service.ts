@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { Global } from '../global';
 
 @Injectable()
 export class BuscarColaboradoresService {
 
-  _buscaUrl = 'http://localhost:5000/v1/busca?texto=';
+    constructor(private _http: Http) { }
 
-  constructor(private _http: Http) { }
-
-  buscar(tecnologia: string): Observable<BuscarColaboradorPorTecnologiasResult[]> {
-    return this._http
-      .get(this._buscaUrl + encodeURIComponent(tecnologia))
-      .map(res => res.json().data);
-  }
+    buscar(tecnologia: string): Observable<BuscarColaboradorPorTecnologiasResult[]> {
+        return this._http
+            .get(Global.API.busca + "?texto=" + encodeURIComponent(tecnologia))
+            .map(res => res.json().data);
+    }
 }
 
 export interface BuscarColaboradorPorTecnologiasResult {

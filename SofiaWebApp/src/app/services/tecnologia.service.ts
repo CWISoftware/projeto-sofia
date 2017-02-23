@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Headers, RequestOptions } from '@angular/http';
+import { Global } from '../global';
 
 @Injectable()
 export class TecnologiaService {
-
-  _buscaUrl = 'http://localhost:5000/v1/tecnologias';
 
   constructor(private _http: Http) { }
 
@@ -15,7 +14,7 @@ export class TecnologiaService {
     let options = new RequestOptions({ headers: headers });
 
     return this._http
-      .post(this._buscaUrl, JSON.stringify(command), options)
+      .post(Global.API.tecnologias, JSON.stringify(command), options)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import 'rxjs/Rx';
 import { TecnologiaService } from '../../services/tecnologia.service';
 import { AvaliarNovaTecnologiaCommand } from '../../services/tecnologia.service';
+import { Global } from '../../global';
 
 @Component({
   selector: 'app-modal-avaliar-tecnologia',
@@ -18,10 +19,10 @@ export class ModalAvaliarTecnologiaComponent implements OnInit {
 
   data: AvaliarNovaTecnologiaCommand;
   niveis: [{ id: string, nome: string }];
-  categorias: [{ id: number, nome: string }];  
+  categorias: [{ id: number, nome: string }];
 
   constructor(private tecnologiaService: TecnologiaService) {
-    this.data = { tecnologia: "", iconeUrl: "", idCategoria: 0, idColaborador: 0, nivel: "NaoConheco" };
+    this.data = { tecnologia: "", iconeUrl: "", idCategoria: 0, idColaborador: Global.Usuario.id, nivel: "NaoConheco" };
     this.niveis = [
       { id: "NaoConheco", nome: "NaoConheco" },
       { id: "Testei", nome: "Testei" },
@@ -42,7 +43,6 @@ export class ModalAvaliarTecnologiaComponent implements OnInit {
   }
 
   adicionarTecnologia() {
-    this.data.idColaborador = 1;
     this.tecnologiaService
       .avaliarNovaTecnologia(this.data);
   };
