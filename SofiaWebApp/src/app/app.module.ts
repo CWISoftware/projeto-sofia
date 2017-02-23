@@ -11,16 +11,15 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './components/shared/top-bar/top-bar.component';
 import { UsuarioLogadoComponent } from './components/shared/usuario-logado/usuario-logado.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { DashboardCategoriasComponent } from './components/dashboard-categorias/dashboard-categorias.component';
 import { ResultadoPesquisaComponent } from './components/resultado-pesquisa/resultado-pesquisa.component';
 import { CaixaPesqusiaComponent } from './components/caixa-pesqusia/caixa-pesqusia.component';
 import { ModalAvaliarTecnologiaComponent } from './components/modal-avaliar-tecnologia/modal-avaliar-tecnologia.component';
+import { DashboardTotalizadorCategoriaComponent } from './components/dashboard-totalizador-categoria/dashboard-totalizador-categoria.component';
 
 //pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { VisualizarPerfilUsuarioPageComponent } from './pages/visualizar-perfil-usuario-page/visualizar-perfil-usuario-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-
 
 
 const appRoutes: Routes = [
@@ -42,12 +41,12 @@ const appRoutes: Routes = [
     TopBarComponent,
     FooterComponent,
     CaixaPesqusiaComponent,
-    DashboardCategoriasComponent,
     ResultadoPesquisaComponent,
     UsuarioLogadoComponent,
     VisualizarPerfilUsuarioPageComponent,
     PageNotFoundComponent,
-    ModalAvaliarTecnologiaComponent
+    ModalAvaliarTecnologiaComponent,
+    DashboardTotalizadorCategoriaComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

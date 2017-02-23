@@ -64,5 +64,15 @@ namespace Sofia.WebApi.Controllers
             });
         }
 
+        [HttpGet, Route("TotalizadorCategorias")]
+        public async Task<IActionResult> GetTotalizadorCategoriasResultAsync()
+        {
+            return await Task.Run(() =>
+            {
+                return Response(_categoriaRepository.ObterTotalizadorCategorias());
+            });
+        }
+            
+
     }
 }

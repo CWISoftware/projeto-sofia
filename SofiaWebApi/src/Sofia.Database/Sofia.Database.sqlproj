@@ -72,6 +72,7 @@
     <Build Include="sofia\Tables\Colaborador.sql" />
     <Build Include="sofia\Tables\Avaliacao.sql" />
     <Build Include="sofia\Views\vwBuscarNivelColaboradorPorTecnologia.sql" />
+    <Build Include="sofia\Views\vwTotalizadorCategorias.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Sofia.Database.publish.xml" />

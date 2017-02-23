@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { BuscarColaboradoresService } from '../../services/buscar-colaboradores.service';
-import { BuscarColaboradorPorTecnologiasResult } from '../../services/buscar-colaboradores.service';
+import { BuscarColaboradoresService, BuscarColaboradorPorTecnologiasResult } from '../../services/buscar-colaboradores.service';
 
 @Component({
   selector: 'app-resultado-pesquisa',
@@ -12,7 +11,7 @@ export class ResultadoPesquisaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 
 }

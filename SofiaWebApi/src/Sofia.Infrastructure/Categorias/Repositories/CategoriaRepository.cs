@@ -1,8 +1,11 @@
-﻿using Sofia.Domain.Categorias.Commands.Results;
+﻿using Dapper;
+using Sofia.Domain.Categorias.Commands.Results;
 using Sofia.Domain.Categorias.Entities;
 using Sofia.Domain.Categorias.Repositories;
+using Sofia.SharedKernel.Runtime;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Sofia.Infrastructure.Categorias.Repositories
@@ -51,6 +54,19 @@ namespace Sofia.Infrastructure.Categorias.Repositories
         public void Update(Categoria entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public IList<ObterTotalizadorCategoriasResult> ObterTotalizadorCategorias()
+        {
+            var sql = "SELECT Nome, QtdTecnologias FROM [sofia].[vwTotalizadorCategorias]";
+
+            using (var conn = new SqlConnection(Runtime.ConnectionString))
+            {
+                conn.Open();
+                return
+                    conn.Query<ObterTotalizadorCategoriasResult>(sql)
+                    .ToList();
+            }
         }
     }
 }
