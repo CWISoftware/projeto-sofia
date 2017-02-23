@@ -1,6 +1,8 @@
-﻿namespace Sofia.SharedKernel.ValueObjects
+﻿using System;
+
+namespace Sofia.SharedKernel.ValueObjects
 {
-    public enum Nivel : byte
+    public enum Nivel : Int16
     {
         Mito = 4,
         Domino = 3,

@@ -21,8 +21,8 @@ namespace Sofia.Infrastructure.Categorias.Mappings
             Property(x => x.QtdTecnologias);
 
             Property(x => x.Versao.Numero)
-             .HasColumnName("Versao")
-             .IsConcurrencyToken();
+             .HasColumnName("RowVersion")
+             .IsRowVersion();
         }
     }
 }

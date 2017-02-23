@@ -6,13 +6,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisualizarPerfilUsuarioPageComponent implements OnInit {
 
-  isShowModalAdicionarTecnologia : boolean;
+  isShowModalAdicionarTecnologia: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  showModalAdicionarTecnologia(){
+  abrirModalAdicionarTecnologia() {
     this.isShowModalAdicionarTecnologia = true;
+  }
+
+  modalAdicionarTecnologiaFechada() {
+    this.isShowModalAdicionarTecnologia = false;
   }
 }

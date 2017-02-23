@@ -55,7 +55,7 @@
       <!-- Right side -->
       <div class="level-right">
         <p class="level-item"><strong>Todas</strong></p>
-        <p class="level-item"><a class="button is-success" (click)="showModalAdicionarTecnologia()">Avaliar</a></p>
+        <p class="level-item"><a class="button is-success" (click)="abrirModalAdicionarTecnologia()">Avaliar</a></p>
       </div>
     </nav>
   </div>
@@ -455,4 +455,4 @@
   </div>
 </div>
 
-<app-modal-avaliar-tecnologia *ngIf="isShowModalAdicionarTecnologia"></app-modal-avaliar-tecnologia>
+<app-modal-avaliar-tecnologia [showModal]="isShowModalAdicionarTecnologia" (onCloseModalEvent)="modalAdicionarTecnologiaFechada()"></app-modal-avaliar-tecnologia>

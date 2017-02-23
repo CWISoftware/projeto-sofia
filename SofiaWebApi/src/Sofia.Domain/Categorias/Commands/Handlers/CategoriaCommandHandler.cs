@@ -6,6 +6,7 @@ using Sofia.Domain.Categorias.Entities;
 using Sofia.Domain.Categorias.Repositories;
 using Sofia.SharedKernel.ValueObjects;
 using System.Collections.Generic;
+using System;
 
 namespace Sofia.Domain.Categorias.Commands.Handlers
 {

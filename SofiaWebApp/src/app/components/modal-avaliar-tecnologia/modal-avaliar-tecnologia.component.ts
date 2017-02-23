@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import 'rxjs/Rx';
 import { TecnologiaService } from '../../services/tecnologia.service';
 import { AvaliarNovaTecnologiaCommand } from '../../services/tecnologia.service';
@@ -10,9 +10,15 @@ import { AvaliarNovaTecnologiaCommand } from '../../services/tecnologia.service'
 })
 export class ModalAvaliarTecnologiaComponent implements OnInit {
 
+  @Input()
+  showModal: boolean;
+
+  @Output()
+  onCloseModalEvent = new EventEmitter();
+
   data: AvaliarNovaTecnologiaCommand;
   niveis: [{ id: string, nome: string }];
-  categorias: [{ id: number, nome: string }];
+  categorias: [{ id: number, nome: string }];  
 
   constructor(private tecnologiaService: TecnologiaService) {
     this.data = { tecnologia: "", iconeUrl: "", idCategoria: 0, idColaborador: 0, nivel: "NaoConheco" };
@@ -28,6 +34,8 @@ export class ModalAvaliarTecnologiaComponent implements OnInit {
       { id: 2, nome: "Frameworks" },
       { id: 3, nome: "Banco de Dados" },
       { id: 4, nome: "Linguagens" }];
+
+    this.showModal = false;
   }
 
   ngOnInit() {
@@ -37,5 +45,14 @@ export class ModalAvaliarTecnologiaComponent implements OnInit {
     this.data.idColaborador = 1;
     this.tecnologiaService
       .avaliarNovaTecnologia(this.data);
+  };
+
+  abrirModal() {
+    this.showModal = true;
+  };
+
+  fecharModal() {
+    this.showModal = false;
+    this.onCloseModalEvent.emit();
   };
 }
