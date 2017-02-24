@@ -556,6 +556,7 @@ namespace Sofia.SharedKernel.Validators
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
+        [SuppressMessage("csharpsquid", "S1244", Justification = "Falso positivo.")]
         public ValidationContract<T> AreNotEquals(Expression<Func<T, double>> selector, double val, string message = "")
         {
             var data = selector.Compile().Invoke(_validatable);
