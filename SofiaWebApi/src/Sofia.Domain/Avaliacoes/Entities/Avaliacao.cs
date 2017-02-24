@@ -9,10 +9,10 @@ namespace Sofia.Domain.Avaliacoes.Entities
         //EF
         protected Avaliacao() { }
 
-        public Avaliacao(Colaborador colaborador, Tecnologia tecnologia, Nivel conceito)
+        public Avaliacao(Colaborador colaborador, Tecnologia tecnologia, Nivel nivel)
         {
             Colaborador = colaborador;
-            Nivel = Nivel;
+            Nivel = nivel;
             Tecnologia = tecnologia;
             AvaliadoEm = DateTime.UtcNow;
         }
@@ -22,9 +22,9 @@ namespace Sofia.Domain.Avaliacoes.Entities
         public Tecnologia Tecnologia { get; private set; }
         public DateTime AvaliadoEm { get; private set; }
 
-        public void MudarAvaliacao(Nivel conceito)
+        public void MudarAvaliacao(Nivel nivel)
         {
-            Nivel = Nivel;
+            Nivel = nivel;
             AvaliadoEm = DateTime.UtcNow;
         }
     }
