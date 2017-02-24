@@ -6,6 +6,7 @@ install:
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
      
 before_build:
+  - dir
   - cd Sofia.WebApi
   - nuget restore
   - cd ..
