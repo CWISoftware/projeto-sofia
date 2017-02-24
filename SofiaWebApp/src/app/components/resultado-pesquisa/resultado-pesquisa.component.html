@@ -12,13 +12,14 @@
       <div class="panel">
         <div class="columns">
           <div class="column">
-            <div class="panel-block-item">{{colaborador.nome}}</div>
+            <div class="panel-block-item"><a routerLink="/perfil/{{colaborador.id}}">{{colaborador.nome}}</a></div>
           </div>
         </div>
-        <div class="columns">
+        <div class="panel">
           <div class="column has-text-left" *ngFor="let tecnologia of colaborador.tecnologias">
             <img class="img-circle tecnologia" src="{{tecnologia.icone}}" alt="{{tecnologia.nome}}" />
-            <i class="fa">{{tecnologia.nivel}} - {{tecnologia.nivelPorExtenso}}</i>            
+            <i class="nome">{{tecnologia.nivel}} - {{tecnologia.nivelPorExtenso}}</i>
+            <ac-star [active]="true" *ngFor="let i of arr(5).fill(1)"></ac-star>
           </div>
         </div>
       </div>

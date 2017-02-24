@@ -11,10 +11,14 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './components/shared/top-bar/top-bar.component';
 import { UsuarioLogadoComponent } from './components/shared/usuario-logado/usuario-logado.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+
+// components
 import { ResultadoPesquisaComponent } from './components/resultado-pesquisa/resultado-pesquisa.component';
 import { CaixaPesqusiaComponent } from './components/caixa-pesqusia/caixa-pesqusia.component';
 import { ModalAvaliarTecnologiaComponent } from './components/modal-avaliar-tecnologia/modal-avaliar-tecnologia.component';
 import { DashboardTotalizadorCategoriaComponent } from './components/dashboard-totalizador-categoria/dashboard-totalizador-categoria.component';
+import { AcStar  } from './components/rating/star.component';
+import { AcStars  } from './components/rating/stars.component';
 
 //pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -46,7 +50,9 @@ const appRoutes: Routes = [
     VisualizarPerfilUsuarioPageComponent,
     PageNotFoundComponent,
     ModalAvaliarTecnologiaComponent,
-    DashboardTotalizadorCategoriaComponent
+    DashboardTotalizadorCategoriaComponent,
+    AcStar,
+    AcStars
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -14,4 +14,7 @@ export class ResultadoPesquisaComponent implements OnInit {
   ngOnInit() {
   }
 
+  arr(stars: number): Array<number> {
+    return new Array<number>(stars);
+  }
 }
