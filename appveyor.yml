@@ -12,7 +12,6 @@ before_build:
   - cd SofiaWebApp
   - npm install
   - cd ..
-  - cd ..
 
 build_script:
   - choco install "msbuild-sonarqube-runner" -y
